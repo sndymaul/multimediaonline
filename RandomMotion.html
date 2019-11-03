@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Starter Canvas HTML app</title>
+   <head>
+      <style type="text/css">
+         body{
+            margin:0;
+         }         
+         canvas{
+            background-color: black;
+         }
+      </style>
+<body>      
+<script>
+var ball=[], ballNum=100, color=['white','gold','cyan','red', 'green', 'cyan'];
+
+function startApp() 
+{
+   myApp.start();
+   for(var i=0;i<ballNum;i++)
+   {
+      var pos=Math.floor(Math.random()*1000);
+      var speed=Math.floor(Math.random()*40);
+      var clr=Math.floor(Math.random()*10);
+      ball[i]= new Sprite(10, 10, 10, color[clr], pos, 0,speed);
+    }
+    myApp.start();
+}
+var myApp = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 800;
+        this.canvas.height = 450;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        appControl();
+        this.interval = setInterval(appLoop, 20);
+    },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
+
+
+function appLoop() {
+     myApp.clear();
+
+    for (var i=0; i<ball.length; i++)
+    {
+
+        var r1=Math.random()*10;
+        var r2=Math.random()*2;
+
+        ball[i].x+=r1;
+        ball[i].y+=r2;
+        if(ball[i].x>myApp.canvas.width)ball[i].x=2;
+        if(ball[i].y>myApp.canvas.height)ball[i].y=2;
+        ball[i].update();
+    }
+}
+
+function Sprite(width, height, radius, color, x, y,speed) {
+    this.width = width;
+    this.height = height;
+    this.x = x;
+    this.y = y;
+    this.radius=radius;    
+    this.speed=speed;
+    this.update = function(){
+        ctx = myApp.context;
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.radius, this.width, this.height);
+    }
+}
+
+function appControl()
+{
+    document.body.addEventListener('mousedown',function(e){
+
+    })
+}
+
+startApp()
+
+</script>
+</body>
+</head>
