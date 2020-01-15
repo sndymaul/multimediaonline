@@ -1,0 +1,231 @@
+body{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #fff;
+	text-align: center;
+}
+
+#CCanvas{
+	background-color: rgb(0, 0, 0);
+	width:700px;
+	height:379px;
+	margin-top:50px;
+}
+
+.topBar{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, .85);
+	border-bottom: 1px solid rgba(20, 150, 223, .9);
+	min-height: 20px;
+	height: 36px;
+	padding: 2px 0;
+}
+
+#filenameTag{
+	color: rgb(252, 252, 252);
+	font-size: 32px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.controlBar{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	min-height: 80px;
+	background-color: rgba(0, 0, 0, .85);
+	box-shadow: 0 0 30px rgba(0,0,0,.8);
+}
+
+.fade{
+	opacity: 0;
+	-webkit-transition: opacity .45s ease-in-out;
+	   -moz-transition: opacity .45s ease-in-out;
+	    -ms-transition: opacity .45s ease-in-out;
+	     -o-transition: opacity .45s ease-in-out;
+	        transition: opacity .45s ease-in-out;
+}
+
+.fade:hover{
+	opacity: .9;
+	-webkit-transition: opacity .45s ease-in-out;
+	   -moz-transition: opacity .45s ease-in-out;
+	    -ms-transition: opacity .45s ease-in-out;
+	     -o-transition: opacity .45s ease-in-out;
+	        transition: opacity .45s ease-in-out;
+}
+
+.cBtn{
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-size: 115%;
+	border: none;
+	margin: 10px;
+}
+
+#cPlay{
+	background-image: url(play40.png);
+}
+
+#cPlay.pause{
+	background-image: url(pause40.png);
+}
+
+#cStop{
+	background-image: url(stop40.png);
+}
+
+.progressbar{
+	width: 100%;
+	height: 6px;
+	background-color: rgba(0, 0, 0, .95);
+	margin: 4px 0;
+}
+
+.progress{
+	height: 2px;
+	margin: 2px 0;
+	position: absolute;
+	background-color: #2187e7;
+	width: 0%;
+	box-shadow: 0px 0px 10px 1px rgba(0, 198, 255, 0.7);
+}
+
+.cLeft{
+	color: #ffffff;
+	float: center;
+	margin-left: 5px;
+}
+
+.csmallBtn{
+	float: right;
+	margin-right: 8px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-color: transparent;
+	border: none;
+	width: 24px;
+	height: 24px;
+}
+
+.cBtn, .csmallBtn{
+	cursor: pointer;
+}
+
+.cBtn, .csmallBtn, .cBtn:hover, .csmallBtn:hover, .cBtn:active, .csmallBtn:active{
+	-webkit-transition: all .25s ease-in-out;
+	   -moz-transition: all .25s ease-in-out;
+	    -ms-transition: all .25s ease-in-out;
+	     -o-transition: all .25s ease-in-out;
+	        transition: all .25s ease-in-out;
+}
+
+.cBtn:hover{
+	box-shadow: 0 0 30px rgba(0, 153, 255, .85);
+	background-color: rgba(0, 153, 255, .5);
+}
+
+.cBtn:active{
+	box-shadow: 0 0 50px rgba(0, 153, 255, 1);
+	background-color: rgba(0, 153, 255, .5);
+}
+
+#cFile{
+	background-image: url(star.png);
+}
+
+#cFile:hover{
+	background-image: url(star.png);
+}
+
+#cHelp{
+	background-image: url(help24.png);
+}
+
+#cHelp:hover{
+	background-image: url(help24h.png);
+}
+
+.helpLayer{
+	position: absolute;
+	border: 8px solid rgba(160, 160, 160, .65);
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, .8);
+	padding: 20px;
+	color: #dddddd;
+	top: 0;
+	width: 500px;
+	text-align: left;
+	z-index: 99;
+}
+
+.helpLayer a{
+	color: #9d9d9d;
+}
+
+.timeTip{
+	position: absolute;
+	z-index: 1030;
+	display: block;
+	padding: 5px;
+	font-size: 11px;
+	visibility: visible;
+}
+
+.tipArrow{
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+	bottom: 0;
+	left: 50%;
+	margin-left: -5px;
+	border-top-color: rgba(8, 161, 247, 0.78);
+	border-width: 5px 5px 0;
+	position: absolute;
+}
+
+.tipContent{
+	max-width: 100px;
+	padding: 3px 8px;
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgba(8, 161, 247, 0.78);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(8, 161, 247, 1);
+}
+
+/**
+ * Under construction
+ */
+
+#cVolume{
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-color: transparent;
+	background-image: url(volume.png);
+	clip: rect(0px, 20px, 40px, 0px);
+}
+
+.cVolumeBtn{
+	position: absolute;
+}
+
+#cVolumeIcon{
+	height: 30px;
+	background-size: cover;
+	background-image: url(vicon40.png);
+}
